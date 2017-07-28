@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/jquery/jquery.cookie.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- Theme CSS -->
+        <link href="css/agency.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>FindMyRestro</title>
+    <!-- *******************************************************************************************
+       * TODO(DEVELOPER): Paste the initialization snippet from:
+       * Firebase Console > Overview > Add Firebase to your web app. *<script src="js/firebaseinitialization.js">
+       ***************************************************************************************** -->
+	   <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+
+	   
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
+	<script>
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDduI2Gl6t_ymLSotFisIz3sL6p1pnavVI",
+    authDomain: "bestrestaurents.firebaseapp.com",
+    databaseURL: "https://bestrestaurents.firebaseio.com",
+    projectId: "bestrestaurents",
+    storageBucket: "bestrestaurents.appspot.com",
+    messagingSenderId: "27254955927"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script type="text/javascript">
+      // FirebaseUI config.
+	 
+      var uiConfig = {
+        signInSuccessUrl:'customerDash.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+	 
+    </script>
+  </head>
+  <body>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    
+    <div class="container">
+  
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><center><h2>Welcome to Login Panel</h2></center></div>
+      <div class="panel-body"><div id="firebaseui-auth-container"></div>
+	</div>
+    </div>
+	</div>
+    </div>
+	
+	
+  </body>
+</html>

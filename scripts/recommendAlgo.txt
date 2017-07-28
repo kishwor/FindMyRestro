@@ -1,0 +1,20 @@
+1:Input Restaurants: R1,R2,R3................Rn.
+2:corresponding likes={restaurantsid:emailid}
+3:
+	FindRestaurants(userid,restaurantsid)
+	{
+			likes_array[].push(userid.likes);
+	}
+			a: GetCuisinesCounts(likes_array)
+				{
+					returns(likesCounts[].push(cusiniesid:counts));
+				
+				}
+			b:sortlikesArrayAscending(GetCuisinesCounts);
+			b:GetTop10Counts(sortlikesArrayAscending)
+				{
+					
+				}
+4:	RecommendsRestaurants(userid,GetTop10Counts);	
+Repeat step 3 to 4 : all userid
+5:stop;
